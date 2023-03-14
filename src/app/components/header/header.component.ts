@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faCircleUser } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  faCircleUser = faCircleUser;
 }
