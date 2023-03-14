@@ -30,14 +30,22 @@
       
   </div>
   <div class="w-11/12 mx-auto">
-    <form class="flex items-center">
-      <div class="bg-[#3C96C8] rounded-sm ml-5 ">
-        <input class="p-4 m-3 rounded-lg" type="text" placeholder="Fran?" />
-        <input class="p-4 m-3 rounded-lg" type="text" placeholder="Till?" />
-        <input class="p-4 m-3 rounded-lg" type="text" placeholder="Nar tur" />
-        <input class="p-4 m-3 rounded-lg" type="text" placeholder="Nar retur"/>
+    <form (ngSubmit)="onSubmit()" class="flex items-center">
+      <div class="bg-[#3C96C8] rounded-sm ml-5 w-[80%]">
+        <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination">
+          <option value="Stockholm">Stockholm</option>
+          <option value="Amsterdam">Amsterdam</option>
+          <option value="Oslo">Oslo</option>
+        </select>
+        <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination">
+          <option value="Amsterdam">Amsterdam</option>
+          <option value="Stockholm">Stockholm</option>
+          <option value="Oslo">Oslo</option>
+        </select>
+        <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar tur" />
+        <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar retur"/>
       </div>
-      <input class="text-white bg-pink-700 rounded-full ml-4 p-14" type="submit" value="Sok">
+      <input class="cursor-pointer text-white bg-pink-700 rounded-full ml-4 p-14" type="submit" value="Sok">
     </form>
   </div>
 </section>
