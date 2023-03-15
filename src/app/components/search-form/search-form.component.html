@@ -1,51 +1,20 @@
-<section class="">
-  <div class="mx-16 flex">
-    <select class="bg-[#1D0837] text-white mx-3" name="" id="">
-      <option value="">Tur & retur</option>
-      <option value="">Enkelresa</option>
+<form (ngSubmit)="onSubmit()" class="flex items-center w-11/12 mx-auto">
+  <div class="bg-[#3C96C8] rounded-sm ml-5 w-[80%]">
+    <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination">
+      <option value="" selected>From:</option>
+      <option value="Stockholm">Stockholm</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Oslo">Oslo</option>
     </select>
-    
-    <div class="mx-3">
-      <label class="text-white" for="adults">Vuxna</label>
-      <select class="bg-[#1D0837] text-white" name="adults" id="adults">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
+    <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination">
+      <option value="" selected>To:</option>
+      <option value="Amsterdam">Amsterdam</option>
+      <option value="Stockholm">Stockholm</option>
+      <option value="Oslo">Oslo</option>
+    </select>
+    <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar tur" name="departureAt" [(ngModel)]="departureAt" />
+    <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar retur" name="arrivalAt" [(ngModel)]="arrivalAt"/>
+  </div>
+  <input class="cursor-pointer text-white bg-pink-700 rounded-full ml-4 p-14" type="submit" value="Sok">
+</form>
 
-    <div class="mx-3">
-      <label class="text-white" for="children">Barn</label>
-      <select class="bg-[#1D0837] text-white" name="adults" id="adults">
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-    </div>
-      
-  </div>
-  <div class="w-11/12 mx-auto">
-    <form (ngSubmit)="onSubmit()" class="flex items-center">
-      <div class="bg-[#3C96C8] rounded-sm ml-5 w-[80%]">
-        <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination">
-          <option value="Stockholm">Stockholm</option>
-          <option value="Amsterdam">Amsterdam</option>
-          <option value="Oslo">Oslo</option>
-        </select>
-        <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination">
-          <option value="Amsterdam">Amsterdam</option>
-          <option value="Stockholm">Stockholm</option>
-          <option value="Oslo">Oslo</option>
-        </select>
-        <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar tur" />
-        <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar retur"/>
-      </div>
-      <input class="cursor-pointer text-white bg-pink-700 rounded-full ml-4 p-14" type="submit" value="Sok">
-    </form>
-  </div>
-</section>

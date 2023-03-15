@@ -1,9 +1,5 @@
-<div class="bg-[#1D0837] h-screen ">
+<div class="bg-[#1D0837] min-h-screen ">
   <app-vertical-menu></app-vertical-menu>
-  <main class="pl-20">
-    <app-header></app-header>
-    <h2 class="py-10 px-20 text-white text-3xl">Välkommen! Hitta ett flexibelt flyg för din nästa resa.</h2>
-    <app-search-form></app-search-form>
-    <app-about-section></app-about-section>
-  </main>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
 </div>

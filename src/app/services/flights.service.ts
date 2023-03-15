@@ -14,7 +14,11 @@ export class FlightsService {
     return this.http.get<any>(`${this.apiUrl}from/${departureDestination}/to/${arrivalDestination}/`);
   }
 
-  getFlights(): Observable<any> {
+  getFlightsAtGivenTime(departureAt: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/leave-at/${departureAt}`)
+  }
+
+  getAllFlights(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}`)
   }
 }

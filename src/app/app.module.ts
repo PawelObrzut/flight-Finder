@@ -10,6 +10,9 @@ import { VerticalMenuComponent } from './components/vertical-menu/vertical-menu.
 import { HeaderComponent } from './components/header/header.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { OptionsFormComponent } from './components/options-form/options-form.component';
+import { ResultsPageComponent } from './pages/results-page/results-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AboutSectionComponent } from './components/about-section/about-section.
     VerticalMenuComponent,
     HeaderComponent,
     SearchFormComponent,
-    AboutSectionComponent
+    AboutSectionComponent,
+    HomePageComponent,
+    OptionsFormComponent,
+    ResultsPageComponent
   ],
   imports: [
     BrowserModule,

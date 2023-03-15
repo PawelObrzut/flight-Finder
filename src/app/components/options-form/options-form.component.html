@@ -1,0 +1,29 @@
+<section class="mx-16 flex">
+  <select class="bg-[#1D0837] text-white mx-3" name="roundTrip" [(ngModel)]="roundTrip" >
+    <option value="true">Tur & retur</option>
+    <option value="false">Enkelresa</option>
+  </select>
+  
+  <div class="mx-3">
+    <label class="text-white" for="adults">Vuxna</label>
+    <select class="bg-[#1D0837] text-white" name="adults" [(ngModel)]="adults">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+
+  <div class="mx-3">
+    <label class="text-white" for="children">Barn</label>
+    <select class="bg-[#1D0837] text-white" name="children" [(ngModel)]="children">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+  </div>
+</section>
