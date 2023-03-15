@@ -13,6 +13,7 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { OptionsFormComponent } from './components/options-form/options-form.component';
 import { ResultsPageComponent } from './pages/results-page/results-page.component';
+import { ResultsSectionComponent } from './components/results-section/results-section.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ResultsPageComponent } from './pages/results-page/results-page.componen
     AboutSectionComponent,
     HomePageComponent,
     OptionsFormComponent,
-    ResultsPageComponent
+    ResultsPageComponent,
+    ResultsSectionComponent
   ],
   imports: [
     BrowserModule,

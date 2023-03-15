@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class FlightsService {
+export class ApiService {
   private apiUrl = 'http://localhost:8080/api/flights/';
 
   constructor(private http: HttpClient) {}
@@ -22,4 +22,3 @@ export class FlightsService {
     return this.http.get<any>(`${this.apiUrl}`)
   }
 }
- 

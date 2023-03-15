@@ -1,12 +1,12 @@
 <form (ngSubmit)="onSubmit()" class="flex items-center w-11/12 mx-auto">
   <div class="bg-[#3C96C8] rounded-sm ml-5 w-[80%]">
-    <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination">
+    <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination" required>
       <option value="" selected>From:</option>
       <option value="Stockholm">Stockholm</option>
       <option value="Amsterdam">Amsterdam</option>
       <option value="Oslo">Oslo</option>
     </select>
-    <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination">
+    <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination" required>
       <option value="" selected>To:</option>
       <option value="Amsterdam">Amsterdam</option>
       <option value="Stockholm">Stockholm</option>

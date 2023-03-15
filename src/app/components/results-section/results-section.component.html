@@ -1,0 +1,18 @@
+<ul class=" my-8 mx-auto w-8/12 text-black">
+  <li *ngFor="let flight of flights" class="bg-white rounded-2xl my-3 grid grid-cols-4">
+    <div class="p-6">
+      <p class="font-bold">{{ getFormattedTime(flight.departureAt) }} - {{ getFormattedTime(flight.arrivalAt) }}</p>
+      <p class="text-sm text-gray-500">{{ flight.departureDestination }} - {{ flight.arrivalDestination }}</p>
+    </div>
+    <div class="p-6">
+      <p><strong>direkt</strong></p>
+    </div>
+    <div class="p-6">
+      <p><strong>{{ getFlightDuration(flight.departureAt, flight.arrivalAt) }}</strong></p>
+    </div>
+    <div class="p-6 w-full border-l border-l-[#B175FF]">
+      <p><strong class="text-xl">{{ flight.adult_price }} kr</strong>/ person</p>
+      <button class="p-3 border rounded bg-[rgb(69,149,112)] hover:bg-[rgb(99,186,148)] text-white w-full">Book a flight</button>
+    </div>
+  </li>
+</ul>
