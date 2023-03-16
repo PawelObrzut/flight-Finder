@@ -1,4 +1,4 @@
-<ul class=" my-8 mx-auto w-8/12 text-black">
+<ul class=" my-8 ml-20 w-8/12 text-black">
   <li *ngFor="let flight of flights" class="bg-white rounded-2xl my-3 grid grid-cols-4">
     <div class="p-6">
       <p class="font-bold">{{ getFormattedTime(flight.departureAt) }} - {{ getFormattedTime(flight.arrivalAt) }}</p>

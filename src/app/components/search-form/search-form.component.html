@@ -1,20 +1,20 @@
-<form (ngSubmit)="onSubmit()" class="flex items-center w-11/12 mx-auto">
-  <div class="bg-[#3C96C8] rounded-sm ml-5 w-[80%]">
-    <select class="p-4 m-3 rounded-lg w-1/5" name="departureDestination" [(ngModel)]="departureDestination" required>
-      <option value="" selected>From:</option>
+<form (ngSubmit)="onSubmit()" [ngClass]="formStyle">
+  <div [ngClass]="formInputs">
+    <select [ngClass]="selectCity" name="departureDestination" [(ngModel)]="departureDestination" required>
+      <option value="" selected disabled>From:</option>
       <option value="Stockholm">Stockholm</option>
       <option value="Amsterdam">Amsterdam</option>
       <option value="Oslo">Oslo</option>
     </select>
-    <select class="p-4 m-3 rounded-lg w-1/5" name="arrivalDestination" [(ngModel)]="arrivalDestination" required>
-      <option value="" selected>To:</option>
+    <select [ngClass]="selectCity" name="arrivalDestination" [(ngModel)]="arrivalDestination" required>
+      <option value="" selected disabled>To:</option>
       <option value="Amsterdam">Amsterdam</option>
       <option value="Stockholm">Stockholm</option>
       <option value="Oslo">Oslo</option>
     </select>
-    <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar tur" name="departureAt" [(ngModel)]="departureAt" />
-    <input class="p-4 m-3 rounded-lg w-1/4" type="date" placeholder="Nar retur" name="arrivalAt" [(ngModel)]="arrivalAt"/>
+    <input [ngClass]="selectDate" type="date" placeholder="Nar tur" name="departureAt" [(ngModel)]="departureAt" />
+    <input [ngClass]="selectDate" type="date" placeholder="Nar retur" name="arrivalAt" [(ngModel)]="arrivalAt"/>
   </div>
-  <input class="cursor-pointer text-white bg-pink-700 rounded-full ml-4 p-14" type="submit" value="Sok">
+  <input [ngClass]="formSubmitBtn" type="submit" value="Sök">
 </form>
 

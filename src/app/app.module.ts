@@ -15,6 +15,11 @@ import { OptionsFormComponent } from './components/options-form/options-form.com
 import { ResultsPageComponent } from './pages/results-page/results-page.component';
 import { ResultsSectionComponent } from './components/results-section/results-section.component';
 
+import { ApiService } from './services/api.service';
+import { DataService } from './services/data.service';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,9 @@ import { ResultsSectionComponent } from './components/results-section/results-se
     HomePageComponent,
     OptionsFormComponent,
     ResultsPageComponent,
-    ResultsSectionComponent
+    ResultsSectionComponent,
+    LoginFormComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,7 @@ import { ResultsSectionComponent } from './components/results-section/results-se
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ApiService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
