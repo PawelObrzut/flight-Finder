@@ -1,22 +1,23 @@
-<main class="ml-20 mt-20 text-white">
+<main class="ml-20 my-20 text-white">
   <h2 class="text-xl text-center p-10">Login</h2>
-  <form class="flex flex-col w-1/4 mx-auto">
-    <label class="" for="email">Email</label>
-    <input class="p-3 rounded" type="text" name="email" placeholder="email" />
-    <label for="password">Password</label>
-    <input class="p-3 rounded" type="password" name="password" placeholder="password" />
+  <form #loginForm="ngForm" (ngSubmit)="onSubmitLogin(loginForm.value)" class="flex flex-col w-1/4 mx-auto">
+    <label class="" for="loginEmail">Email</label>
+    <input (ngModel)="loginEmail" class="p-3 rounded text-black" type="text" name="loginEmail" placeholder="email" />
+    <label for="loginPassword">Password</label>
+    <input (ngModel)="loginPassword" class="p-3 rounded text-black" type="password" name="loginPassword" placeholder="password" />
     <input class="border rounded border-white p-3 mt-3 bg-red-400 hover:opacity-80 cursor-pointer" type="submit" value="Loggain">
   </form>
+
   <h2 class="text-xl text-center p-10">SignUp</h2>
-  <form class="flex flex-col w-1/4 mx-auto">
-    <label class="" for="name">Name</label>
-    <input class="p-3 rounded" type="text" name="name" placeholder="name" />
-    <label class="" for="lastName">Last Name</label>
-    <input class="p-3 rounded" type="text" name="lastName" placeholder="last name" />
-    <label class="" for="email">Email</label>
-    <input class="p-3 rounded" type="text" name="email" placeholder="email" />
-    <label for="password">Password</label>
-    <input class="p-3 rounded" type="password" name="password" placeholder="password" />
+  <form #signUpForm="ngForm" (ngSubmit)="onSubmitSignUp(signUpForm.value)" class="flex flex-col w-1/4 mx-auto">
+    <label class="" for="signUpName">Name</label>
+    <input (ngModel)="signUpName" class="p-3 rounded text-black" type="text" name="signUpName" placeholder="name" />
+    <label class="" for="signUpLastName">Last Name</label>
+    <input (ngModel)="signUpLastName" class="p-3 rounded text-black" type="text" name="signUpLastName" placeholder="last name" />
+    <label class="" for="signUpEmail">Email</label>
+    <input (ngModel)="signUpEmail" class="p-3 rounded text-black" type="text" name="signUpEmail" placeholder="email" />
+    <label for="signUpPassword">Password</label>
+    <input (ngModel)="signUpPassword" class="p-3 rounded text-black" type="password" name="signUpPassword" placeholder="password" />
     <input class="border rounded border-white p-3 mt-3 bg-red-400 hover:opacity-80 cursor-pointer" type="submit" value="SignUp">
 
   </form>
