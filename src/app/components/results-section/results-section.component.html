@@ -12,7 +12,7 @@
     </div>
     <div class="p-6 w-full border-l border-l-[#B175FF]">
       <p><strong class="text-xl">{{ flight.adult_price }} kr</strong>/ person</p>
-      <button class="p-3 border rounded bg-[rgb(69,149,112)] hover:bg-[rgb(99,186,148)] text-white w-full">Book a flight</button>
+      <button (click)="bookFlight(flight.flight_id)" class="p-3 border rounded bg-[rgb(69,149,112)] hover:bg-[rgb(99,186,148)] text-white w-full">Book a flight</button>
     </div>
   </li>
 </ul>

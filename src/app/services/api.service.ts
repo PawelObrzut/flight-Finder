@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +9,24 @@ import { Observable } from 'rxjs';
 export class ApiService {
   private apiUrl = 'http://localhost:8080/api/flights/';
   private userUrl = 'http://localhost:8080/users/';
+  private bookUrl = 'http://localhost:8080/api/bookings/';
 
-  registerHttpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
     }),
+    withCredentials: true
   };
 
-  constructor(private http: HttpClient) {}
+  bookFlightHttpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.cookieService.get('accessToken')}`
+    }),
+    withCredentials: true
+  };
+
+  constructor(private http: HttpClient, private cookieService: CookieService) {}
 
   getFlightsBetweenDestinations(departureDestination: string, arrivalDestination: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}from/${departureDestination}/to/${arrivalDestination}/`);
@@ -29,8 +40,8 @@ export class ApiService {
     return this.http.get<any>(`${this.apiUrl}`)
   }
 
-  getUser(): Observable<any> {
-    return this.http.get<any>('whatever');
+  getUser(credentials: any): Observable<any> {
+    return this.http.post<any>(`${this.userUrl}login`, { email: credentials.loginEmail, password: credentials.loginPassword}, this.httpOptions);
   }
 
   registerUser(user: any): Observable<any> {
@@ -42,7 +53,18 @@ export class ApiService {
         email: user.signUpEmail,
         password: user.signUpPassword
       }, 
-      this.registerHttpOptions
+      this.httpOptions
       );
+  }
+
+  addFlight(flightId: string, adultsNo: number, childrenNo?: number) {
+    return this.http.post<any>(
+      `${this.bookUrl}`, 
+      {
+        flight_id: flightId,
+        adults: adultsNo,
+        children: childrenNo
+      },
+      this.bookFlightHttpOptions)
   }
 }

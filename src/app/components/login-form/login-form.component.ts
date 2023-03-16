@@ -16,14 +16,15 @@ export class LoginFormComponent {
   signUpPassword!: string;
 
   constructor(private apiService: ApiService) {}
-  
+
   @ViewChild('signUpForm') signUpForm!: NgForm;
 
   onInit() {}
 
   onSubmitLogin(formValues: any) {
-    // user service to perform http request
-    console.log(formValues)
+    this.apiService.getUser(formValues).subscribe(response =>{
+      document.cookie
+    });
   }
 
   onSubmitSignUp(formValues: any) {
